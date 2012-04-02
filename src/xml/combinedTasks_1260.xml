@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workflow>
+	<templet stepId='0'>
+		<columns>b_c.fullname</columns>
+		<tables>cper.test_proc2 b_c</tables>
+		<condition>q_w_c.case_id = b_c.case_id</condition>
+		<mapping>
+			<segment property='fullname' column='fullname' />
+		</mapping>
+		<html><![CDATA[oo：<input type='text' name='fullname' value='{fullname}'/>]]></html>
+	</templet>
+
+	<templet stepId='2526'>
+		<columns>b_c.fullname</columns>
+		<tables>cper.test_proc2 b_c</tables>
+		<condition>q_w_c.case_id = b_c.case_id</condition>
+		<mapping>
+			<segment property='fullname' column='fullname' />
+		</mapping>
+		<html><![CDATA[oo：<input type='text' name='fullname' value='{fullname}'/>]]></html>
+	</templet>
+</workflow>
+
+

@@ -1,0 +1,12 @@
+
+import "phoneTypeWrap.proto";
+
+package tutorial;
+
+option java_package = "pb.protobuf";
+option java_outer_classname = "PhoneNumberProtos";
+
+message PhoneNumberWrap {
+    required string number = 1;
+    optional PhoneTypeWrap type = 2 [default = HOME];
+}

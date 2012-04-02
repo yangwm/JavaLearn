@@ -1,0 +1,142 @@
+
+
+
+
+batchRemindExecutor test, 32 remindBatchThreadNumber, 处理50000 * 100用户， 需要1分20秒 :
+
+
+
+hash:
+[root@gz50 yangwmTemp]# javac concurrent/*.java
+[root@gz50 yangwmTemp]# java concurrent.SimpleHashBench
+% executeTimes: 1000000000, summary cosume: 774 ms
+& executeTimes: 1000000000, summary cosume: 781 ms
+
+
+string split:
+[root@gz50 yangwmTemp]# java concurrent.StringSplit
+str:0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,
+stringSplit executeTimes: 100000, summary cosume: 894 ms
+patternSplit executeTimes: 100000, summary cosume: 890 ms
+
+
+queue:
+[root@gz50 yangwmTemp]# java concurrent.queue.BlockingQueueBench
+begin...
+java.util.concurrent.ArrayBlockingQueue offer executeTimes: 1000000, summary consumeTime: 11718 ms, for Per Thread consumeTime: 117 ms
+[root@gz50 yangwmTemp]# java concurrent.queue.BlockingQueueBench
+begin...
+java.util.concurrent.LinkedBlockingQueue put executeTimes: 1000000, summary consumeTime: 17647 ms, for Per Thread consumeTime: 176 ms
+
+[root@gz50 yangwmTemp]# java concurrent.queue.BlockingQueueBench
+begin...
+java.util.concurrent.LinkedBlockingQueue offer executeTimes: 1000000, summary consumeTime: 19981 ms, for Per Thread consumeTime: 199 ms
+
+
+ThreadPoolExecutor:
+[root@gz50 yangwmTemp]# javac concurrent/queue/*.java
+[root@gz50 yangwmTemp]# java concurrent.queue.ThreadPoolExecutorBench
+queue:java.util.concurrent.SynchronousQueue
+reject task number:400
+execute task number:600
+end execute cosume time:3302 ms
+[root@gz50 yangwmTemp]# 
+[root@gz50 yangwmTemp]# java concurrent.queue.ThreadPoolExecutorBench
+queue:java.util.concurrent.ArrayBlockingQueue
+reject task number:390
+execute task number:610
+end execute cosume time:6179 ms
+[root@gz50 yangwmTemp]# 
+[root@gz50 yangwmTemp]# java concurrent.queue.ThreadPoolExecutorBench
+queue:java.util.concurrent.LinkedBlockingQueue
+reject task number:390
+execute task number:610
+end execute cosume time:6177 ms
+
+
+cache:
+[root@gz50 yangwmTemp]# java concurrent.cache.LRUCacheBench
+begin...
+concurrent.cache.CopyOnWriteLRUHashCache get executeTimes: 1000000, summary consumeTime: 36242 ms, for Per Thread consumeTime: 362 ms
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[root@gz50 yangwmTemp]# java concurrent.LRUCacheBench
+begin...
+Exception in thread "Thread-1" java.util.ConcurrentModificationException
+        at java.util.LinkedHashMap$LinkedHashIterator.nextEntry(LinkedHashMap.java:373)
+        at java.util.LinkedHashMap$EntryIterator.next(LinkedHashMap.java:392)
+        at java.util.LinkedHashMap$EntryIterator.next(LinkedHashMap.java:391)
+        at java.util.HashMap.putAll(HashMap.java:523)
+        at concurrent.CopyOnWriteLRUHashCache.remove(CopyOnWriteLRUHashCache.java:98)
+        at concurrent.CopyOnWriteLRUHashCache.get(CopyOnWriteLRUHashCache.java:189)
+        at concurrent.LRUCacheBench$Task.run(LRUCacheBench.java:71)
+        at java.lang.Thread.run(Thread.java:619)
+Exception in thread "Thread-3" java.lang.NullPointerException
+        at concurrent.CopyOnWriteLRUHashCache.remove(CopyOnWriteLRUHashCache.java:101)
+        at concurrent.CopyOnWriteLRUHashCache.get(CopyOnWriteLRUHashCache.java:189)
+        at concurrent.LRUCacheBench$Task.run(LRUCacheBench.java:71)
+        at java.lang.Thread.run(Thread.java:619)
+Exception in thread "Thread-2" java.lang.NullPointerException
+        at concurrent.CopyOnWriteLRUHashCache.remove(CopyOnWriteLRUHashCache.java:101)
+        at concurrent.CopyOnWriteLRUHashCache.get(CopyOnWriteLRUHashCache.java:189)
+        at concurrent.LRUCacheBench$Task.run(LRUCacheBench.java:71)
+        at java.lang.Thread.run(Thread.java:619)
+

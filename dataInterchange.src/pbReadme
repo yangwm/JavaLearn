@@ -1,0 +1,16 @@
+README
+
+The Java classes is generate by protoc, don't change them!
+The proto file should follow the protobuf spec
+
+1. This package is for protobuf auto generated files, don't add other files 
+2. Don't remove any fields in .proto file
+3. Add new field to .proto should be reviewed.
+
+How to compile .proto file
+-------------------------------------------
+1. Install protobuf(protobuf-2.4.0a.tar.gz)  into $install/protobuf 
+2. Compile
+   cd $src/
+   protoc -I pb/protobuf --java_out=. pb/protobuf/*.proto
+3. Now all the Java class are available at dest directory	

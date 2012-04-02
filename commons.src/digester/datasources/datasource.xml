@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<datasources>
+  <datasource>
+    <name>HsqlDataSource</name>
+    <driver>org.hsqldb.jdbcDriver</driver>
+    <url>jdbc:hsqldb:hsql://localhost</url>
+    <username>sa</username>
+    <password></password>
+  </datasource>
+  <datasource>
+    <name>OracleDataSource</name>
+    <driver>oracle.jdbc.driver.OracleDriver</driver>
+    <url>jdbc:oracle:thin:@localhost:1521:yangwm</url>
+    <username>yangwm</username>
+    <password>yangwm</password>
+  </datasource>
+</datasources>

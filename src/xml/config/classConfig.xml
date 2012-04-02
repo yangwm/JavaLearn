@@ -1,0 +1,5 @@
+<?xml version="1.0" ?>
+<config class="xml.config.ClassConfigBean" type="class">
+	<property name="ip">localhost</property>
+	<property name="port">8080</property>
+</config>

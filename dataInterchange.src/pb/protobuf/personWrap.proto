@@ -1,0 +1,14 @@
+
+import "phoneNumberWrap.proto";
+
+package tutorial;
+
+option java_package = "pb.protobuf";
+option java_outer_classname = "PersonProtos";
+
+message PersonWrap {
+	required int64 id = 1;
+	required string name = 2;
+	optional string email = 3;
+	repeated PhoneNumberWrap phone = 4;
+}

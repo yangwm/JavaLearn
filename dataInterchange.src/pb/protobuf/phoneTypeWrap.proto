@@ -1,0 +1,11 @@
+
+package tutorial;
+
+option java_package = "pb.protobuf";
+option java_outer_classname = "PhoneTypeProtos";
+
+enum PhoneTypeWrap {
+    MOBILE = 0;
+    HOME = 1;
+    WORK = 2;
+}

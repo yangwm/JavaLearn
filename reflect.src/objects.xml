@@ -1,0 +1,18 @@
+<?xml version="1.0" ?>
+<beans>
+	<bean id="MessageProviderProp" class="jref.hello5.MessageProviderProp">
+		<constructor-arg>
+			<value>message.properties</value>
+		</constructor-arg>
+	</bean>
+	<bean id="MessageProviderXml" class="jref.hello5.MessageProviderXml">
+		<constructor-arg>
+			<value>message.xml</value>
+		</constructor-arg>
+	</bean>
+	<bean id="HelloAction" class="jref.hello5.HelloAction">
+		<property name="messageProvider">
+			<ref local="MessageProviderXml"/>
+		</property>
+	</bean>
+</beans>

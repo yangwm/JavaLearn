@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+<beans>
+	<bean id="b1" class="reflect.ioc.Employee">
+		<property name="name" value='a' />
+		<property name="age" value="30" />
+		<property name="salary" value="5000.37"  />
+		<property name="addr" ref="b2" />
+	</bean>
+	<bean id="b2" class="reflect.ioc.Address">
+		<property name="street" value="5Daokou" />
+		<property name="no" value="B19" />
+	</bean>
+	<bean id="b3" class="reflect.ioc.Address">
+		<property name="street" value="Tsinghua" />
+		<property name="no" value="Center 8" />
+	</bean>
+</beans>

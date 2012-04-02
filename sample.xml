@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<sample name="haha">
+	<title>welcome to jiangxi fuzhou</title>
+	<list>
+		<something id="1">test something</something>
+		<something id="2">test something</something>
+		<something id="3">test something</something>
+	</list>
+</sample>

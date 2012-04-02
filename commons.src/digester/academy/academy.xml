@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<academy name="JAcademy">
+	<student name="JavaBoy" division="A">
+		<course>
+			<id>C1</id>
+			<name>JSP</name>
+		</course>
+		<course>
+			<id>C2</id>
+			<name>Servlets</name>
+		</course>
+	</student>
+	<student name="JavaGirl" division="B">
+		<course>
+			<id>C3</id>
+			<name>EJB</name>
+		</course>
+	</student>
+	<teacher name="JavaGuru">
+		<certification>SCJP</certification>
+		<certification>SCWCD</certification>
+	</teacher>
+	<teacher name="JavaMaster">
+		<certification>OCP</certification>
+		<certification>SCJP</certification>
+		<certification>SCEA</certification>
+	</teacher>
+</academy>
