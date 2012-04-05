@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="test/src/test/java"/>
+	<classpathentry kind="src" path="test/src/main/java"/>
+	<classpathentry kind="src" path="tutorial.src"/>
+	<classpathentry kind="src" path="reflect.src"/>
+	<classpathentry kind="src" path="jdbc.src"/>
+	<classpathentry kind="src" path="concurrent.src"/>
+	<classpathentry kind="src" path="designPattern.src"/>
+	<classpathentry kind="src" path="commons.src"/>
+	<classpathentry kind="src" path="logback.src"/>
+	<classpathentry kind="src" path="bluedavy.src"/>
+	<classpathentry kind="src" path="base.src"/>
+	<classpathentry kind="src" path="dataInterchange.src"/>
+	<classpathentry kind="src" path="algorithm.src"/>
+	<classpathentry kind="src" path="guava.src"/>
+	<classpathentry kind="lib" path="lib/log4j-1.2.15.jar" sourcepath="D:/yangwm/openSource/logging/apache-log4j-1.2.15.zip"/>
+	<classpathentry kind="lib" path="lib/commons-lang-2.4.jar" sourcepath="/media/main/yangwm/openSource/commons/commons-lang-2.4-src.zip"/>
+	<classpathentry kind="lib" path="lib/commons-beanutils-1.8.0.jar" sourcepath="D:/yangwm/openSource/commons/commons-beanutils-1.8.0-src.zip"/>
+	<classpathentry kind="lib" path="lib/commons-digester-2.0.jar" sourcepath="D:/yangwm/openSource/commons/commons-digester-2.0-src.zip"/>
+	<classpathentry kind="lib" path="lib/quartz-all-1.6.5.jar" sourcepath="D:/yangwm/openSource/quartz/quartz-1.6.5.zip"/>
+	<classpathentry kind="lib" path="lib/commons-collections-3.2.1.jar" sourcepath="/media/main/yangwm/openSource/commons/commons-collections-3.2.1-src.zip"/>
+	<classpathentry kind="lib" path="lib/commons-betwixt-0.8.jar" sourcepath="D:/yangwm/openSource/commons/commons-betwixt-0.8-src.zip"/>
+	<classpathentry kind="lib" path="lib/dom4j-1.6.1.jar" sourcepath="D:/yangwm/openSource/dom4j/dom4j-1.6.1.zip"/>
+	<classpathentry kind="lib" path="lib/commons-logging-1.1.1.jar"/>
+	<classpathentry kind="lib" path="lib/xml-apis-2.0.2.jar"/>
+	<classpathentry kind="lib" path="lib/Log4j_ultrapower_1.0_bate.jar"/>
+	<classpathentry kind="lib" path="lib/httpclient-4.0.jar" sourcepath="D:/yangwm/openSource/commons/httpcomponents-client-4.0-src.zip"/>
+	<classpathentry kind="lib" path="lib/httpcore-4.0.1.jar" sourcepath="D:/yangwm/openSource/commons/httpcomponents-core-4.0.1-src.zip"/>
+	<classpathentry kind="lib" path="lib/commons-dbutils-1.2i.jar" sourcepath="D:/yangwm/openSource/commons/commons-dbutils-1.2i-src.zip"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/servlet-jsp"/>
+	<classpathentry kind="lib" path="lib/mysql-connector-java-5.1.7-bin.jar"/>
+	<classpathentry kind="lib" path="lib/xmlparse-ams1.0.jar"/>
+	<classpathentry kind="lib" path="lib/commons-net-2.0.jar" sourcepath="D:/yangwm/openSource/commons/commons-net-2.0-src.zip"/>
+	<classpathentry kind="lib" path="lib/junit-4.8.1.jar" sourcepath="D:/yangwm/openSource/unittest/junit/junit-4.8.1-src.jar"/>
+	<classpathentry kind="lib" path="lib/cglib-2.2.jar" sourcepath="D:/yangwm/openSource/cglib/cglib-src-2.2.jar"/>
+	<classpathentry kind="lib" path="lib/asm-all-2.2.3.jar"/>
+	<classpathentry kind="lib" path="lib/commons-pool-1.5.5.jar" sourcepath="/home/yangwm/.m2/repository/commons-pool/commons-pool/1.5.5/commons-pool-1.5.5-sources.jar"/>
+	<classpathentry kind="lib" path="lib/protobuf-java-2.4.0a.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="lib/guava-11.0.2.jar" sourcepath="/home/yangwm/Studys/gitStudy/guava-libraries"/>
+	<classpathentry kind="lib" path="lib/asm-debug-all-3.3.1.jar"/>
+	<classpathentry kind="lib" path="lib/ganymed-ssh2-build210.jar"/>
+	<classpathentry kind="lib" path="lib/guice-2.0.jar"/>
+	<classpathentry kind="lib" path="lib/httpcore-nio-4.0.1.jar"/>
+	<classpathentry kind="lib" path="lib/J7Zip.jar"/>
+	<classpathentry kind="lib" path="lib/jaxen-1.1.1.jar"/>
+	<classpathentry kind="lib" path="lib/ojdbc6_g.jar"/>
+	<classpathentry kind="lib" path="lib/xstream-1.3.1.jar"/>
+	<classpathentry kind="lib" path="lib/javassist-1.1.jar"/>
+	<classpathentry kind="output" path="classes"/>
+</classpath>

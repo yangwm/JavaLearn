@@ -4,6 +4,8 @@ import java.text.DecimalFormat;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 
+import util.MemCpuLogUtil;
+
 /**
  * Stat util
  * @author tim
@@ -92,31 +94,11 @@ public class TestPrintUtil {
 		if (elapseTime != null) {
 			sb.append(getElapseTimeStat(elapseTime));
 			sb.append("HEAP: ");
-			sb.append(memoryReport());
+			sb.append(MemCpuLogUtil.getMemCpuInfo());
 			sb.append("\n");
 		}
 		
 		System.out.println(sb.toString());
-	}
-	
-	public static String memoryReport() {
-		Runtime runtime = Runtime.getRuntime();
-
-		double freeMemory = (double) runtime.freeMemory() / (1024 * 1024);
-		double maxMemory = (double) runtime.maxMemory() / (1024 * 1024);
-		double totalMemory = (double) runtime.totalMemory() / (1024 * 1024);
-		double usedMemory = totalMemory - freeMemory;
-		double percentFree = ((maxMemory - usedMemory) / maxMemory) * 100.0;
-		double percentUsed = 100 - percentFree;
-		// int percent = 100 - (int) Math.round(percentFree);
-
-		DecimalFormat mbFormat = new DecimalFormat("#0.00");
-        DecimalFormat percentFormat = new DecimalFormat("#0.0");
-		
-        StringBuilder sb = new StringBuilder(" ");
-		sb.append(mbFormat.format(usedMemory)).append("MB of ").append(mbFormat.format(maxMemory))
-		.append(" MB (").append(percentFormat.format(percentUsed)).append("%) used");
-		return sb.toString();
 	}
 
 	// private static String value100 = "asdfasdfxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxsaaaaaaaaaaaaaaadfsasdfasdfxxxxxxxxxxxxxxxxxxxxxxxxxxxxxasdwdd";
