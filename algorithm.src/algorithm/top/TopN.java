@@ -34,9 +34,8 @@ public class TopN {
      * @return result's length <= n 
      */
     public static long[] top(long[][] inputs, int n) {
-        long beginTime = System.nanoTime();
-        
         int inputsLen = inputs.length;
+        
         TreeSet<RowColumn> heap = new TreeSet<RowColumn>();
         for (int i = 0; i < inputsLen; i++) {
             long val = inputs[i][0];
@@ -44,10 +43,7 @@ public class TopN {
                 heap.add(new RowColumn(val, i, 0));
             }
         }
-        
-        long cosumeTime = System.nanoTime() - beginTime;
-//        System.out.println("testTopN cosume time " + (cosumeTime/1000000));
-        
+
         long[] result = new long[n];
         int resultNum = 0;
         while (resultNum < n) {
@@ -84,8 +80,6 @@ public class TopN {
             result[resultNum] = value;
             resultNum++;
         }
-        cosumeTime = System.nanoTime() - beginTime;
-//        System.out.println("testTopN cosume time " + (cosumeTime/1000000));
         
         return result;
     }

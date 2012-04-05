@@ -39,7 +39,6 @@ public class TopNOld {
      */
     public static long[] top(long[][] inputs, int n) {
         int inputsLen = inputs.length;
-        long beginTime = System.nanoTime();
         
         long[] dest = localBuf.get();
         int pos = 0;
@@ -50,16 +49,10 @@ public class TopNOld {
         }
         long[] totalIds = new long[pos];
         System.arraycopy(dest, 0, totalIds, 0, pos);
-        
-        long cosumeTime = System.nanoTime() - beginTime;
-//        System.out.println("testTopN inputsLen " + inputsLen + ", pos " + pos + ", cosume time " + (cosumeTime/1000000));
 
         Arrays.sort(totalIds);
         long[] result = ArrayUtil.reverseCopy(totalIds, n); // 线上版没有进行只大小为n数组操作,而是放回所有数据   
         //System.out.println(result.length);
-        
-        cosumeTime = System.nanoTime() - beginTime;
-//        System.out.println("testTopN swapNum " + swapNum + ", cosume time " + (cosumeTime/1000000));
         
         return result;
     }
