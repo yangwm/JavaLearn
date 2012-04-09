@@ -11,7 +11,7 @@ import org.junit.Test;
 import algorithm.ArrayUtil;
 
 /**
- * 
+ * TopN Bench
  * 
  * @author yangwm Mar 27, 2012 9:18:46 PM
  */

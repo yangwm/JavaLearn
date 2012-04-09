@@ -33,25 +33,33 @@ public class TopNOld {
     /**
      * top n 
      * 
-     * @param inputs must order desc 
+     * @param inputs's vector 
      * @param n
      * @return result's length <= n 
      */
     public static long[] top(long[][] inputs, int n) {
-        int inputsLen = inputs.length;
-        
         long[] dest = localBuf.get();
         int pos = 0;
-        for (int i = 0; i < inputsLen; i++) {
-            long[] vector = inputs[i];
+        for (long[] vector : inputs) {
+            if (vector == null) {
+                continue;
+            }
+            
             System.arraycopy(vector, 0, dest, pos, vector.length);
             pos += vector.length;
         }
-        long[] totalIds = new long[pos];
-        System.arraycopy(dest, 0, totalIds, 0, pos);
+        long[] totalIds = Arrays.copyOf(dest, pos);
+        
+        int totalIdsLen = totalIds.length;
+        if (totalIdsLen < n) {
+            n = totalIdsLen;
+        }
 
+        /*
+         * 线上版没有进行只大小为n数组操作,而是放回所有数据  
+         */
         Arrays.sort(totalIds);
-        long[] result = ArrayUtil.reverseCopy(totalIds, n); // 线上版没有进行只大小为n数组操作,而是放回所有数据   
+        long[] result = ArrayUtil.reverseCopy(totalIds, n);
         //System.out.println(result.length);
         
         return result;

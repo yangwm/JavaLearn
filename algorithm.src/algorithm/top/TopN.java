@@ -3,6 +3,7 @@
  */
 package algorithm.top;
 
+import java.util.Arrays;
 import java.util.TreeSet;
 
 /**
@@ -29,7 +30,7 @@ public class TopN {
     /**
      * top n 
      * 
-     * @param inputs must order desc 
+     * @param inputs's vector must order desc 
      * @param n
      * @return result's length <= n 
      */
@@ -38,16 +39,17 @@ public class TopN {
         
         TreeSet<RowColumn> heap = new TreeSet<RowColumn>();
         for (int i = 0; i < inputsLen; i++) {
-            long val = inputs[i][0];
+            long[] vector = inputs[i];
+            long val = vector[0];
             if (val > 0) { // 值需大于0  
                 heap.add(new RowColumn(val, i, 0));
             }
         }
 
         long[] result = new long[n];
-        int resultNum = 0;
-        while (resultNum < n) {
-            //System.out.println("heap.size():" + heap.size());
+        int pos = 0;
+        while (pos < n) {
+            //System.out.println("top heap.size():" + heap.size());
             if (heap.isEmpty()) {
                 break;
             }
@@ -55,37 +57,33 @@ public class TopN {
             /* 
              * 找到最大值以及所在数据行列 并移除,  
              */
-            RowColumn rowColumn = getDeleteMax(heap); // O(1)
-            
-            long value = rowColumn.value;
-            int rowIdx = rowColumn.rowIdx;
-            int columnIdx = rowColumn.columnIdx;
-            
-            /*
-             * 当前heap中最大值，对应行号的列号指针后移 
-             * 并保存新的最大值到heap中 
-             */
-            if (columnIdx < inputs[rowIdx].length - 1) {
-                columnIdx++; // 指针后移 
-                
-                long val = inputs[rowIdx][columnIdx]; // 将指针后移之后的数据加入到堆中，待比较
-                if (val > 0) {
-                    heap.add(new RowColumn(val, rowIdx, columnIdx)); // O(lg*m) 
-                }
-            } 
+            RowColumn rowColumn = heap.pollLast(); // O(1)
 
             /*
              * save result 
              */
-            result[resultNum] = value;
-            resultNum++;
+            result[pos] = rowColumn.value;
+            pos++;
+            
+            /*
+             * 找当前vector剩余的最大值：对应行号的列号指针后移并保存新的最大值到heap中 
+             */
+            long[] vector = inputs[rowColumn.rowIdx];
+            if (rowColumn.columnIdx < vector.length - 1) {
+                int column = rowColumn.columnIdx + 1; // 指针后移 
+                
+                long val = vector[column]; // 将指针后移之后的数据加入到堆中，待比较
+                if (val > 0) {
+                    heap.add(new RowColumn(val, rowColumn.rowIdx, column)); // O(lg*m) 
+                }
+            } 
         }
         
+        if (pos < n) {
+            //System.out.println("top pos:" + pos + ", n:" + n);
+            return Arrays.copyOf(result, pos);
+        }
         return result;
-    }
-    
-    private static RowColumn getDeleteMax(TreeSet<RowColumn> heap) {
-        return heap.pollLast();
     }
     
     

@@ -1,14 +1,14 @@
 /**
  * 
  */
-package hash;
+package algorithm.hash;
 
 import java.util.Collection;
 import java.util.SortedMap;
 import java.util.TreeMap;
 
 /**
- * 
+ * consistent hash
  * 
  * @author yangwm Mar 26, 2012 12:30:53 AM
  */
@@ -18,7 +18,10 @@ public class ConsistentHash<T> {
     private final int numberOfReplicas;
     private final SortedMap<Integer, T> circle = new TreeMap<Integer, T>();
 
-    public ConsistentHash(HashFunction hashFunction, int numberOfReplicas, Collection<T> nodes) {
+    public ConsistentHash(int numberOfReplicas, Collection<T> nodes) {
+        this(new SimpleHash(), numberOfReplicas, nodes);
+    }
+    private ConsistentHash(HashFunction hashFunction, int numberOfReplicas, Collection<T> nodes) {
         this.hashFunction = hashFunction;
         this.numberOfReplicas = numberOfReplicas;
 
@@ -49,6 +52,15 @@ public class ConsistentHash<T> {
             hash = tailMap.isEmpty() ? circle.firstKey() : tailMap.firstKey();
         }
         return circle.get(hash);
+    }
+    
+    public static class SimpleHash implements HashFunction {
+
+        @Override
+        public int hash(Object key) {
+            return 0;
+        }
+        
     }
 
 }
