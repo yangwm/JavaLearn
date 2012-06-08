@@ -50,6 +50,10 @@ public class OrderingSample {
         Arrays.sort(inputArray1, ComparatorUtils.reversedComparator(null));
         System.out.println(Arrays.toString(inputArray1));
         
+        inputArray1 = new Long[] { (long) 2, (long) 2, (long)4, (long)6, (long)8, (long)15 };
+        Arrays.sort(inputArray1, Collections.reverseOrder());
+        System.out.println(Arrays.toString(inputArray1));
+        
         //Collections.sort(list, c)
         //CollectionUtils.s
     }

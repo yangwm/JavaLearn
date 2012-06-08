@@ -13,7 +13,7 @@ import java.util.Arrays;
 public class Base62Util {
 
 	private static final int BASE = 62;
-	private static final char[] SEED_CHARS = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ".toCharArray();
+	private static final char[] SEED_CHARS = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz".toCharArray();
 	private static final int SEED_INTS[] = new int[128]; // ascii code 
     static {
         Arrays.fill(SEED_INTS, -1);
@@ -53,7 +53,6 @@ public class Base62Util {
 
 	/**
 	 * @param args
-	 * @throws SinaurlException
 	 */
 	public static void main(final String[] args) {
 	    System.out.println(encode(16203434962L));

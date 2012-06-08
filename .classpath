@@ -29,7 +29,6 @@
 	<classpathentry kind="lib" path="lib/httpclient-4.0.jar" sourcepath="D:/yangwm/openSource/commons/httpcomponents-client-4.0-src.zip"/>
 	<classpathentry kind="lib" path="lib/httpcore-4.0.1.jar" sourcepath="D:/yangwm/openSource/commons/httpcomponents-core-4.0.1-src.zip"/>
 	<classpathentry kind="lib" path="lib/commons-dbutils-1.2i.jar" sourcepath="D:/yangwm/openSource/commons/commons-dbutils-1.2i-src.zip"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/servlet-jsp"/>
 	<classpathentry kind="lib" path="lib/mysql-connector-java-5.1.7-bin.jar"/>
 	<classpathentry kind="lib" path="lib/xmlparse-ams1.0.jar"/>
 	<classpathentry kind="lib" path="lib/commons-net-2.0.jar" sourcepath="D:/yangwm/openSource/commons/commons-net-2.0-src.zip"/>
@@ -38,7 +37,6 @@
 	<classpathentry kind="lib" path="lib/asm-all-2.2.3.jar"/>
 	<classpathentry kind="lib" path="lib/commons-pool-1.5.5.jar" sourcepath="/home/yangwm/.m2/repository/commons-pool/commons-pool/1.5.5/commons-pool-1.5.5-sources.jar"/>
 	<classpathentry kind="lib" path="lib/protobuf-java-2.4.0a.jar"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="lib" path="lib/guava-11.0.2.jar" sourcepath="/home/yangwm/Studys/gitStudy/guava-libraries"/>
 	<classpathentry kind="lib" path="lib/asm-debug-all-3.3.1.jar"/>
 	<classpathentry kind="lib" path="lib/ganymed-ssh2-build210.jar"/>
@@ -49,5 +47,6 @@
 	<classpathentry kind="lib" path="lib/ojdbc6_g.jar"/>
 	<classpathentry kind="lib" path="lib/xstream-1.3.1.jar"/>
 	<classpathentry kind="lib" path="lib/javassist-1.1.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="output" path="classes"/>
 </classpath>

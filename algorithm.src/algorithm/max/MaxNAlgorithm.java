@@ -102,7 +102,7 @@ public class MaxNAlgorithm<E> {
          */
         if (k < result.length - 1) {
             int srcIdx = k + 1;
-            if (srcIdx != result.length - 1) { // 已经是最后一位不需要移动整个数组 
+            if (srcIdx < result.length) { // 不是插入到最后需要移动数组 
                 int destIdx = srcIdx + 1; // 后移一位  
                 System.arraycopy(result, srcIdx, result, destIdx, result.length - destIdx);
             }
