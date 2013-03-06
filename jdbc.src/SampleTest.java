@@ -103,10 +103,9 @@ public class SampleTest {
     }
 
     public static Connection getConnectionForMysql() {
-        //String url = "jdbc:mysql://m4521i.apollo.grid.sina.com.cn:4521/?useUnicode=true&amp;characterEncoding=UTF-8&amp;autoReconnect=true";
-        String url = "jdbc:mysql://10.75.48.21:4521/?useUnicode=true&amp;characterEncoding=UTF-8&amp;autoReconnect=true";
+        String url = "jdbc:mysql://testdb:testport/?useUnicode=true&amp;characterEncoding=UTF-8&amp;autoReconnect=true";
         System.out.println("url:" + url);
-        return getConnection("com.mysql.jdbc.Driver", url, "openapi", "im1400uc");
+        return getConnection("com.mysql.jdbc.Driver", url, "testuser", "testpwd");
     }
     
     public static Connection getConnection(String driver, String url, String username, String password) {
